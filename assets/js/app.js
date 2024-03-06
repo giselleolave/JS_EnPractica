@@ -4,7 +4,7 @@ let formulario = document.getElementById( "formulario");
 
 formulario.addEventListener( "submit",function(event) {
     event.preventDefault();
-    
+    limpiarErrores();
     let textNombre =document.querySelector("#nombre").value;
     let textAsunto =document.querySelector("#asunto").value;
     let textMensaje =document.querySelector("#mensaje").value;
@@ -26,7 +26,7 @@ function limpiarErrores() {
 function exito() {
     document.querySelector(".resultado").innerHTML= "Mensaje enviado con éxito";
     };
-    function validar(nombre,asunto,email) {
+    function validar(nombre,asunto,mensaje) {
 
         let pasamosLaValidacion = true;
         let validacionNombre =  /[a-zA-Z]/gim;
@@ -42,7 +42,7 @@ function exito() {
         };
         let validacionMensaje = /[a-zA-Z]/gim;
         
-        if (validacionMensaje.test(email) == false ) {
+        if (validacionMensaje.test(mensaje) == false ) {
          document.querySelector(".errorMensaje").innerHTML = "El mensaje es requerido"
          pasamosLaValidacion = false;
         };

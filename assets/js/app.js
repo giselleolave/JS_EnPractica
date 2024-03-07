@@ -1,6 +1,6 @@
-
-limpiarErrores();
-let formulario = document.getElementById( "formulario");
+/*EJERCICIO 1*/
+document.addEventListener("DOMContentLoaded", function() {
+let formulario = document.getElementById("formulario");
 
 formulario.addEventListener( "submit",function(event) {
     event.preventDefault();
@@ -10,15 +10,16 @@ formulario.addEventListener( "submit",function(event) {
     let textMensaje =document.querySelector("#mensaje").value;
     let resultado = validar(textNombre,textAsunto,textMensaje);
     if(resultado == true) {
-    exito();
+       exito();
     };
 });
 
 function limpiarErrores() {
-    document.querySelector(".resultado").innerHTML= "";
+   
     document.querySelector(".errorNombre").innerHTML = "";
     document.querySelector(".errorAsunto").innerHTML = "";
     document.querySelector(".errorMensaje").innerHTML= "";
+    document.querySelector(".resultado").innerHTML= "";
     };
     
 
@@ -29,7 +30,7 @@ function exito() {
     function validar(nombre,asunto,mensaje) {
 
         let pasamosLaValidacion = true;
-        let validacionNombre =  /[a-zA-Z]/gim;
+        let validacionNombre =  /^[a-zA-Z\s]+$/gim;
         
         if (validacionNombre.test(nombre) == false) {
          document.querySelector(".errorNombre").innerHTML = "El nombre es requerido"
@@ -48,3 +49,6 @@ function exito() {
         };
         return pasamosLaValidacion;
         };
+});
+
+

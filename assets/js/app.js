@@ -5,9 +5,9 @@ let formulario = document.getElementById("formulario");
 formulario.addEventListener( "submit",function(event) {
     event.preventDefault();
     limpiarErrores();
-    let textNombre =document.querySelector("#nombre").value;
-    let textAsunto =document.querySelector("#asunto").value;
-    let textMensaje =document.querySelector("#mensaje").value;
+    let textNombre = document.querySelector("#nombre").value;
+    let textAsunto = document.querySelector("#asunto").value;
+    let textMensaje = document.querySelector("#mensaje").value;
     let resultado = validar(textNombre,textAsunto,textMensaje);
     if(resultado == true) {
        exito();
